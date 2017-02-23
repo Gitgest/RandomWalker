@@ -18,6 +18,7 @@ public class RandomWalk {
     private int max;
     private int stepCount;
     private int edge;
+    private int maxDistance;
 
     //constructors
     public RandomWalk(int max, int edge) {
@@ -25,6 +26,7 @@ public class RandomWalk {
         this.edge = edge;
         this.startX = 0;
         this.startY = 0;
+        this.maxDistance = 0;
     }
 
     public RandomWalk(int max, int edge, int startX, int startY) {
@@ -32,9 +34,10 @@ public class RandomWalk {
         this.edge = edge;
         this.startX = startX;
         this.startY = startY;
+        this.maxDistance = 0;
 
     }
-    
+
     //Should generate a random value, on which the point should take a step
     //in either four directions
     public void takeStep() {
@@ -70,8 +73,8 @@ public class RandomWalk {
 
     //check if walker has reached the boundary
     public boolean inBounds() {
-        return (startX <= edge) && (startX >= -edge) && (startY <= edge) && 
-                (startY >= -edge);
+        return (startX <= edge) && (startX >= -edge) && (startY <= edge)
+                && (startY >= -edge);
     }
 
     //simulate a random walk 'till moreSteps() and inBounds() both return false
@@ -84,6 +87,14 @@ public class RandomWalk {
         }
     }
 
+    private int max(int num1, int num2) {
+        if (num1 < num2) {
+            return num1;
+        } else {
+            return num2;
+        }
+    }
+
     public int getX() {
         return startX;
     }
@@ -92,8 +103,6 @@ public class RandomWalk {
         return startY;
     }
 
-    
-    
 //toString method
     @Override
     public String toString() {

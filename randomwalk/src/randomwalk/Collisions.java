@@ -38,6 +38,6 @@ public class Collisions {
 }
 
 public static boolean samePosition(RandomWalk p1, RandomWalk p2){
-            return p1.getX()==p2.getX() && p1.getY()==p2.getY();
+        return p1.getX()==p2.getX() && p1.getY()==p2.getY();
         }
 }
