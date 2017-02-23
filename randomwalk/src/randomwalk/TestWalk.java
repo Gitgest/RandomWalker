@@ -49,7 +49,7 @@ public class TestWalk {
                 + "********************");
         
         //make each walk object take 5 steps
-        for(int i = 1; i <= 5; i++){
+        for(int i = 0; i <= 5; i++){
             walk1.takeStep();
             walk2.takeStep();
             System.out.println("Walk1; " + walk1);

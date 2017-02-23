@@ -23,6 +23,8 @@ public class RandomWalk {
     public RandomWalk(int max, int edge) {
         this.max = max;
         this.edge = edge;
+        this.startX = 0;
+        this.startY = 0;
     }
 
     public RandomWalk(int max, int edge, int startX, int startY) {
