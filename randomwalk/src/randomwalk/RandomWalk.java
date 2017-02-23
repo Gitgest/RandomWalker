@@ -39,57 +39,54 @@ public class RandomWalk {
     //in either four directions
     public void takeStep() {
         Random rand = new Random();
-        
+
         int randomNum = (int) rand.nextInt(4);
         /* check if while loop is good */
-        
-            switch (randomNum) {
-                case 0:
-                    this.startX = startX + 1;
-                    this.stepCount = stepCount+1;
-                    break;
-                case 1:
-                    this.startX = startX - 1;
-                    this.stepCount = stepCount+1;
-                    break;
-                case 2:
-                    this.startY = startY + 1;
-                    this.stepCount = stepCount+1;
-                    break;
-                case 3:
-                    this.startY = startY - 1;
-                    this.stepCount = stepCount+1;
-                    break;
-            }
-        }
-    
-    //simulate a random walk 'till moreSteps() and inBounds() both return false
-    public void walk(){
-        while((inBounds()==true) && (moreSteps()==true)){
-            takeStep();
-            if(inBounds()==false){System.out.println("out of bounds");
-            if(moreSteps()==false){System.out.println("max number of steps has"
-                    + " been reached");}
-            }
-        }
-    }
-    
-    //check if walker as reached neccesary steps
-    public boolean moreSteps(){
-        return stepCount<max;
-    }
-    
-    //check if walker has reached the boundary
-    public boolean inBounds(){
-        return startX<edge && startX>-edge && startY<edge && startY>-edge;
-    }
-    //toString method
 
+        switch (randomNum) {
+            case 0:
+                this.startX = startX + 1;
+                this.stepCount = stepCount + 1;
+                break;
+            case 1:
+                this.startX = startX - 1;
+                this.stepCount = stepCount + 1;
+                break;
+            case 2:
+                this.startY = startY + 1;
+                this.stepCount = stepCount + 1;
+                break;
+            case 3:
+                this.startY = startY - 1;
+                this.stepCount = stepCount + 1;
+                break;
+        }
+    }
+
+    //check if walker as reached neccesary steps
+    public boolean moreSteps() {
+        return stepCount < max;
+    }
+
+    //check if walker has reached the boundary
+    public boolean inBounds() {
+        return startX <= edge && startX >= -edge && startY <= edge && startY >= -edge;
+    }
+
+    //simulate a random walk 'till moreSteps() and inBounds() both return false
+    public void walk() {
+        while ((inBounds() == true) && (moreSteps() == true)) {
+            takeStep();
+            /*if(inBounds()==false){System.out.println("out of bounds");
+            if(moreSteps()==false){System.out.println("max number of steps has"
+                    + " been reached");}*/
+        }
+    }
+
+//toString method
     @Override
     public String toString() {
         return "Steps: " + stepCount + "; Position: (" + startX + ", " + startY
                 + ")";
     }
 }
-
-

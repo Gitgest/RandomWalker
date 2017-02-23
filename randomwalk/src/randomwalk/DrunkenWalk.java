@@ -21,7 +21,7 @@ public class DrunkenWalk {
         int max;   
         int edge;
         int drunks;
-        int drunkCounter = 0;
+        int drunkCounter=0;
         Scanner scan = new Scanner(System.in);
         System.out.println("\nDrunkenWalker Program");
         System.out.println();
@@ -31,17 +31,19 @@ public class DrunkenWalk {
         System.out.print("Enter the maximum number of steps: ");
         max = scan.nextInt();
         System.out.println("Enter the amount of drunks to simulate");
-        drunks = scan.nextInt();
+        drunks = scan.nextInt()-1;
+        System.out.println("-------------------------------------------------");
         
         for(int i=0; i<=drunks; i++){
-            drunk = new RandomWalk(edge,max);
-            if(drunk.inBounds()==false){
+            drunk = new RandomWalk(max,edge);
+            drunk.walk();
+            if(drunk.inBounds() != true){
                 drunkCounter = drunkCounter+1;
             }
-            drunk.walk();
-            System.out.println("Drunks have fallen off the platform "+
-                    drunkCounter + " thus far.");
         }
+        
+        System.out.println("Drunks have fallen off the platform "+
+                    drunkCounter + " tmes thus far.");
     }
 
 }
