@@ -61,6 +61,13 @@ public class RandomWalk {
             }
         }
     
+    public boolean moreSteps(){
+        return stepCount<max;
+    }
+    
+    public boolean inBounds(){
+        return startX<edge && startY<edge;
+    }
     //toString method
 
     @Override
