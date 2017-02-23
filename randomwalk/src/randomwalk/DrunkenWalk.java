@@ -34,6 +34,9 @@ public class DrunkenWalk {
         drunks = scan.nextInt()-1;
         System.out.println("-------------------------------------------------");
         
+        //chance of falling off is very high in both cases with boundary 10
+        //chance increases with higher step value
+        // at the boundary of 50, the chance of falling off is much, much lower.
         for(int i=0; i<=drunks; i++){
             drunk = new RandomWalk(max,edge);
             drunk.walk();
@@ -42,8 +45,8 @@ public class DrunkenWalk {
             }
         }
         
-        System.out.println("Drunks have fallen off the platform "+
-                    drunkCounter + " tmes thus far.");
+        System.out.println("Drunks have fallen off the platform " +
+                    drunkCounter + " times thus far.");
     }
 
 }

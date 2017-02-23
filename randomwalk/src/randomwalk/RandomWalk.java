@@ -34,7 +34,7 @@ public class RandomWalk {
         this.startY = startY;
 
     }
-
+    
     //Should generate a random value, on which the point should take a step
     //in either four directions
     public void takeStep() {
@@ -70,7 +70,8 @@ public class RandomWalk {
 
     //check if walker has reached the boundary
     public boolean inBounds() {
-        return startX <= edge && startX >= -edge && startY <= edge && startY >= -edge;
+        return (startX <= edge) && (startX >= -edge) && (startY <= edge) && 
+                (startY >= -edge);
     }
 
     //simulate a random walk 'till moreSteps() and inBounds() both return false
@@ -83,6 +84,16 @@ public class RandomWalk {
         }
     }
 
+    public int getX() {
+        return startX;
+    }
+
+    public int getY() {
+        return startY;
+    }
+
+    
+    
 //toString method
     @Override
     public String toString() {
