@@ -17,7 +17,7 @@ public class TestWalk {
         int maxSteps;   // maximum number of steps in a walk
         int maxCoord;   // the maximum x and y coordinate
         int x, y;       // starting x and y coordinates for a walk
-        
+
         /*
         Scanner scan = new Scanner(System.in);
         
@@ -56,10 +56,16 @@ public class TestWalk {
             System.out.println("walk2; " + walk2);
             System.out.println("------------------");
         }*/
-        
-        RandomWalk walker1 = new RandomWalk(200, 10, 0, 0);
-        walker1.walk();
-        System.out.println(walker1);
-        
+        RandomWalk walker1 = new RandomWalk(5, 10, 0, 0);
+        /*walker1.walk();
+        System.out.println(walker1);*/
+        for (int i = 1; i <= 5; i++) {
+            walker1.takeStep();
+            System.out.println("Max distance at step " + i + ": "
+                    + Math.abs(walker1.getMaxDistance()) + " (" + walker1.getX()
+                    + ", " + walker1.getY() + ")");
+
+        }
+
     }
 }

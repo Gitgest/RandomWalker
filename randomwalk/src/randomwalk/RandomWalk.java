@@ -64,8 +64,8 @@ public class RandomWalk {
                 this.stepCount = stepCount + 1;
                 break;
         }
+        this.maxDistance=max(maxDistance,max(startX, startY));
     }
-
     //check if walker as reached neccesary steps
     public boolean moreSteps() {
         return stepCount < max;
@@ -88,7 +88,7 @@ public class RandomWalk {
     }
 
     private int max(int num1, int num2) {
-        if (num1 < num2) {
+        if (Math.abs(num1) >= Math.abs(num2)) {
             return num1;
         } else {
             return num2;
@@ -102,6 +102,12 @@ public class RandomWalk {
     public int getY() {
         return startY;
     }
+
+    public int getMaxDistance() {
+        return maxDistance;
+    }
+    
+    
 
 //toString method
     @Override
