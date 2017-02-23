@@ -45,7 +45,7 @@ public class DrunkenWalk {
             }
         }
         
-        System.out.println("Drunks have fallen off the platform " +
+        System.out.println("Drunks have fallen off the platform "+
                     drunkCounter + " times thus far.");
     }
 
