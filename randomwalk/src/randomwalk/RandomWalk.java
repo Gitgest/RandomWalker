@@ -66,7 +66,7 @@ public class RandomWalk {
     }
     
     public boolean inBounds(){
-        return startX<edge && startY<edge;
+        return startX<edge && startX>-edge && startY<edge && startY>-edge;
     }
     //toString method
 
