@@ -49,21 +49,18 @@ public class RandomWalk {
         switch (randomNum) {
             case 0:
                 this.startX = startX + 1;
-                this.stepCount = stepCount + 1;
                 break;
             case 1:
                 this.startX = startX - 1;
-                this.stepCount = stepCount + 1;
                 break;
             case 2:
-                this.startY = startY + 1;
-                this.stepCount = stepCount + 1;
+                this.startY = startY + 1;;
                 break;
             case 3:
                 this.startY = startY - 1;
-                this.stepCount = stepCount + 1;
                 break;
         }
+        this.stepCount = stepCount + 1;
         this.maxDistance=max(maxDistance,max(startX, startY));
     }
     //check if walker as reached neccesary steps
@@ -73,8 +70,7 @@ public class RandomWalk {
 
     //check if walker has reached the boundary
     public boolean inBounds() {
-        return (startX <= edge) && (startX >= -edge) && (startY <= edge)
-                && (startY >= -edge);
+        return (startX < Math.abs(edge))  && (startY < Math.abs(edge));
     }
 
     //simulate a random walk 'till moreSteps() and inBounds() both return false
