@@ -67,15 +67,14 @@ public class RandomWalk {
     public boolean moreSteps() {
         return stepCount < max;
     }
-
     //check if walker has reached the boundary
     public boolean inBounds() {
-        return (startX < Math.abs(edge))  && (startY < Math.abs(edge));
+        return (startX < edge)  && (startY < edge);
     }
 
     //simulate a random walk 'till moreSteps() and inBounds() both return false
     public void walk() {
-        while ((inBounds() == true) && (moreSteps() == true)) {
+        while (inBounds() == true && moreSteps() == true) {
             takeStep();
             /*if(inBounds()==false){System.out.println("out of bounds");
             if(moreSteps()==false){System.out.println("max number of steps has"
